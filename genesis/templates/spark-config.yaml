@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spark-config
+data:
+  spark-defaults.conf: |-
+    spark.kubernetes.namespace={{ .Release.Namespace }}
+{{- if index .Values "spark-defaults.conf" -}}
+{{ range $key, $value := index .Values "spark-defaults.conf" }}
+{{ printf "# %s" $key | indent 4 }}
+{{ $value | indent 4 }}
+{{- end -}}
+{{ end }}
+  spark-env.sh: |-
+{{- if index .Values "spark-env.sh" -}}
+{{ range $key, $value := index .Values "spark-env.sh" }}
+{{ printf "# %s" $key | indent 4 }}
+{{ $value | indent 4 }}
+{{- end -}}
+{{ end }}
+

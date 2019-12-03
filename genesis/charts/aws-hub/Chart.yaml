@@ -1,0 +1,7 @@
+apiVersion: v1
+description: JupyterHub entrypoint to AWS EC2 on EKS
+maintainers:
+- email: stevengs@uw.edu
+  name: Steven Stetzler
+name: aws-hub
+version: 0.0.1

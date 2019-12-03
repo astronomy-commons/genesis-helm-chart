@@ -1,0 +1,7 @@
+apiVersion: v1
+name: "axs-hub"
+version: 0.0.1
+description: "JupyterHub with AXS"
+maintainers:
+  - name: "Steven Stetzler"
+    email: "stevengs@uw.edu"
